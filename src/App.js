@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import HolaMundo from './holaMundo';
+import SaludoUsuario from './saludoUsuario';
+import IfStatement from './IfStatement';
+import TernaryOperator from './TernaryOperator';
+import LogicalOperator from './LogicalOperator';
+import ListRendering from './ListRendering';
 
-function App() {
+const App = () => {
+  // Datos de ejemplo para los componentes
+  const isLoggedIn = true;
+  const unreadMessages = ['Mensaje 1', 'Mensaje 2'];
+  const todos = [
+    { id: 1, text: 'Tarea 1', completed: false },
+    { id: 2, text: 'Tarea 2', completed: true },
+    { id: 3, text: 'Tarea 3', completed: false }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HolaMundo />
+      <SaludoUsuario />
+      <IfStatement isLoggedIn={isLoggedIn} />
+      <TernaryOperator isLoggedIn={isLoggedIn} />
+      <LogicalOperator unreadMessages={unreadMessages} />
+      <ListRendering todos={todos} />
     </div>
   );
-}
+};
 
 export default App;
+
+
+
+
